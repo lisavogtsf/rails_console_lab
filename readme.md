@@ -1,4 +1,4 @@
-## Console Lab
+## Console Lab, Answers by Lisa Vogt
 
 For this lab, we'd like you to strengthen your Rails console skills. This lab is going to be very familiar to the SQL lab, where we'll ask you to create a model and then write out the console commands you would use to execute these queries
 
@@ -9,11 +9,23 @@ For this lab, we'd like you to strengthen your Rails console skills. This lab is
 
 ### Tasks to create
 
-1. Using the new/save syntax, create a student, first and last name and an age 
-2. Save the student to the database
-3. Using the find/set/save syntax update the student's first name to taco
-4. Delete the student (where first_name is taco)
-5. Validate that every Student's last name is unique
+1. Using the new/save syntax, create a student, first and last name and an age     
+
+		 kid = Student.new
+ 		 kid.first_name = "Denis"
+ 		 kid.last_name = "TheMenace"
+ 		 kid.age = 12
+ 		
+2. Save the student to the database.  
+		`kid.save`
+
+3. Using the find/set/save syntax update the student's first name to taco  
+		`badkid = Student.find_by_first_name("Denis")`
+		`badkid.first_name = "Taco"`
+4. Delete the student (where first_name is taco)  
+		`badkid.destroy`
+5. Validate that every Student's last name is unique  
+
 6. Validate that every Student has a first and last name that is longer than 4 characters
 7. Validate that every first and last name cannot be empty
 7. Combine all of these individual validations into one validation (using validate and a hash) 
