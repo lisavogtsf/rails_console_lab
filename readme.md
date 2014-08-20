@@ -1,4 +1,5 @@
 ## Console Lab, Answers by Lisa Vogt
+### (various errors)
 
 For this lab, we'd like you to strengthen your Rails console skills. This lab is going to be very familiar to the SQL lab, where we'll ask you to create a model and then write out the console commands you would use to execute these queries
 
@@ -42,8 +43,7 @@ For this lab, we'd like you to strengthen your Rails console skills. This lab is
 `	validates_presence_of :first_name, :message => "first_name cannot be left blank"`  
 
 `validates_presence_of :last_name, :message => "last_name cannot be left blank"`
-
-7. Combine all of these individual validations into one validation (using validate and a hash) 	  
+8. Combine all of these individual validations into one validation (using validate and a hash) 	  
 
 		validates :first_name, {
 		   :presence => true,
@@ -55,18 +55,18 @@ For this lab, we'd like you to strengthen your Rails console skills. This lab is
 		   :length => {:minimum => 4}
 		}
 
-9. (Nine)Using the create syntax create a student named John Doe who is 33 years old
+9 . (Nine)Using the create syntax create a student named John Doe who is 33 years old
 `Student.create("first_name" => "John", "last_name" => "Doe", "age" => 33)`
 10. (Ten)Show if this new student entry is valid 
 `_.valid?`
-10. (Eleven)Show the number of errors for this student instance
+11. (Eleven)Show the number of errors for this student instance
 `Student.find_by_first_name("John").errors`
-11. In one command, Change John Doe's name to Jonathan Doesmith 
+12. In one command, Change John Doe's name to Jonathan Doesmith 
 	`Student.update((Student.find_by_last_name("Doe")), {:first_name => "Jonathan", :last_name => "Doesmith"})`
-12. Clear the errors array 
+13. Clear the errors array 
  -- I don't know what the errors array is, and I can't find reference to it online.  
 `undergrad.errors.clear` still leaves error info in undergrad.error
-13. Save Jonathan Doesmith
+14. Save Jonathan Doesmith
 `_.save` or `Student.find_by_first_name("Jonathan").save`
 15. Find all of the Students
 `y Student.where.not(id: nil)`
