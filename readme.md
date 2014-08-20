@@ -41,7 +41,7 @@ For this lab, we'd like you to strengthen your Rails console skills. This lab is
 
 `	validates_presence_of :first_name, :message => "first_name cannot be left blank"`  
 
-	`validates_presence_of :last_name, :message => "last_name cannot be left blank"`
+`validates_presence_of :last_name, :message => "last_name cannot be left blank"`
 
 7. Combine all of these individual validations into one validation (using validate and a hash) 	  
 
