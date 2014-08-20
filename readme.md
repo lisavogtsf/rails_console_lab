@@ -37,7 +37,8 @@ For this lab, we'd like you to strengthen your Rails console skills. This lab is
         
       ` validates_length_of :last_name, :minimum => 4, :message => "last_name must be more than 4 characters"`
 
-7. Validate that every first and last name cannot be empty
+7. Validate that every first and last name cannot be empty  
+
 `	validates_presence_of :first_name, :message => "first_name cannot be left blank"`  
 
 	`validates_presence_of :last_name, :message => "last_name cannot be left blank"`
