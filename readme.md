@@ -25,10 +25,22 @@ For this lab, we'd like you to strengthen your Rails console skills. This lab is
 4. Delete the student (where first_name is taco)  
 		`badkid.destroy`
 5. Validate that every Student's last name is unique  
-
+ 
+		in student.rb: validates_uniqueness_of :last_name
+		test in console: newbie.save
+		   (0.2ms)  BEGIN
+		   Student Exists (2.8ms)  SELECT  1 AS one FROM "students"   		   WHERE "students"."last_name" = 'Smith' LIMIT 1
+		   (0.3ms)  ROLLBACK
 6. Validate that every Student has a first and last name that is longer than 4 characters
+        `validates_length_of :first_name, :minimum => 4, :message => "first_name must be more than 4 characters"`
+      ` validates_length_of :last_name, :minimum => 4, :message => "last_name must be more than 4 characters"`
+
 7. Validate that every first and last name cannot be empty
-7. Combine all of these individual validations into one validation (using validate and a hash) 
+`	validates_presence_of :first_name, :message => "first_name cannot be left blank"`
+	`validates_presence_of :last_name, :message => "last_name cannot be left blank"`
+
+7
+. Combine all of these individual validations into one validation (using validate and a hash) 
 8. Using the create syntax create a student named John Doe who is 33 years old
 9. Show if this new student entry is valid
 10. Show the number of errors for this student instance
